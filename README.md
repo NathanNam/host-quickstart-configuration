@@ -27,8 +27,8 @@ observe-agent version
 Configure the Observe Agent with the following command. Replace OBSERVE_TOKEN and OBSERVE_COLLECTION_ENDPOINT with the appropriate values and run on each host.
 ```markdown
 sudo observe-agent init-config \
---token ${OBSERVE_TOKEN?} \
---observe_url ${OBSERVE_COLLECTION_ENDPOINT?} \
+--token ${OBSERVE_TOKEN} \
+--observe_url ${OBSERVE_COLLECTION_ENDPOINT} \
 --host_monitoring.enabled=true \
 --host_monitoring.logs.enabled=true \
 --host_monitoring.metrics.enabled=true
@@ -81,8 +81,8 @@ observe-agent version
 Configure the Observe Agent with the following command. Replace OBSERVE_TOKEN and OBSERVE_COLLECTION_ENDPOINT with the appropriate values and run on each host.
 ```markdown
 sudo observe-agent init-config \
---token ${OBSERVE_TOKEN?} \
---observe_url ${OBSERVE_COLLECTION_ENDPOINT?} \
+--token ${OBSERVE_TOKEN} \
+--observe_url ${OBSERVE_COLLECTION_ENDPOINT} \
 --host_monitoring.enabled=true \
 --host_monitoring.logs.enabled=true \
 --host_monitoring.metrics.enabled=true
@@ -111,7 +111,7 @@ sudo yum erase observe-agent -y
 Install the `observe-agent` package via the provided installation powershell script. This script needs to be run in a powershell terminal that you run as **administrator**. Replace OBSERVE_TOKEN and OBSERVE_COLLECTION_ENDPOINT with the appropriate values and run on each host.
 
 ```text
-[Net.ServicePointManager]::SecurityProtocol = "Tls, Tls11, Tls12, Ssl3"; Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/observeinc/observe-agent/main/scripts/install.ps1" -outfile .\install.ps1; .\install.ps1 -observe_token "${OBSERVE_TOKEN?}" -observe_collection_endpoint "${OBSERVE_COLLECTION_ENDPOINT?}"
+[Net.ServicePointManager]::SecurityProtocol = "Tls, Tls11, Tls12, Ssl3"; Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/observeinc/observe-agent/main/scripts/install.ps1" -outfile .\install.ps1; .\install.ps1 -observe_token "${OBSERVE_TOKEN}" -observe_collection_endpoint "${OBSERVE_COLLECTION_ENDPOINT}"
 ```
 ### Check Status
 ```text
@@ -156,8 +156,8 @@ sudo mv otelcol-contrib /usr/local/bin/
 **Set relevant environment variables and run binary:**
 
 ```
-export OBSERVE_COLLECTION_ENDPOINT="${OBSERVE_COLLECTION_ENDPOINT?}"; 
-export OBSERVE_TOKEN="${OBSERVE_TOKEN?}"; 
+export OBSERVE_COLLECTION_ENDPOINT="${OBSERVE_COLLECTION_ENDPOINT}"; 
+export OBSERVE_TOKEN="${OBSERVE_TOKEN}"; 
 export CONFIG_PATH=[THE_FULL_PATH_TO_config.yaml]; 
 otelcol-contrib --config $CONFIG_PATH
 ```
